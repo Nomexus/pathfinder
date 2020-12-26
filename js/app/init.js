@@ -274,6 +274,9 @@ define([], () => {
                 },
                 'C18': {
                     class: 'pf-system-sec-drifter'
+                },
+                'C25': {
+                    class: 'pf-system-sec-pochven'
                 }
             },
             // true sec
@@ -564,7 +567,8 @@ define([], () => {
             4: 'K162 - H',
             5: 'K162 - L',
             6: 'K162 - 0.0',
-            7: 'K162 - C12 Thera'
+            7: 'K162 - C12 Thera',
+            8: 'K162 - C25 Triglavian'
         }
     };
 });

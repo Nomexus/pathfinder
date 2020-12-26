@@ -2377,7 +2377,7 @@ define([
                 break;
             default:
                 // w-space
-                for(let i = 1; i <= 18; i++){
+                for(let i = 1; i <= 25; i++){
                     if(security === 'C' + i){
                         areaId = i;
                         break;

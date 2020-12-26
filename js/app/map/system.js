@@ -780,6 +780,13 @@ define([
             }));
         }
 
+        if(data.pochven){
+            headInfoLeft.push(Object.assign(document.createElement('i'), {
+                className: `fas fa-fw pf-triglivian pf-content-t ${Util.getSecurityClassForSystem(data.security)}`,
+                title: 'pochven'
+            }));
+        }
+
         if(data.shattered){
             headInfoLeft.push(Object.assign(document.createElement('i'), {
                 className: `fas fa-fw fa-chart-pie ${Util.getSecurityClassForSystem('SH')}`,

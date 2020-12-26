@@ -31,6 +31,7 @@ define([
         requirejs(['text!templates/dialog/jump_info.html', 'mustache'], (template, Mustache) => {
             let iconShattered = '<i class="fas fa-fw fa-chart-pie pf-system-sec-unknown"></i>';
             let iconDrifter = '<i class="fas fa-fw fa-wave-square pf-system-sec-drifter"></i>';
+            let iconPochven = '<i class="pf-triglivian pf-system-sec-pochven">T</i>';
 
             let formatTableBodyData = (head, matrixBody) => {
                 return matrixBody.map((row, rowIndex) => {
@@ -110,7 +111,31 @@ define([
                 body: formatTableBodyData(headSecond, matrixBodySecond)
             };
 
-            let staticsTablesData = [staticsTableDataFirst, staticsTableDataSecond];
+            // Statics table thrid -----------------------------------------------------------------------------------
+
+            let headGroupThird = [
+                [
+                    {label: '', class: 'separator-right', style: 'width: 55px;'},
+                    {label: iconPochven + '&nbsp;&nbsp;' + 'Pochven'}
+                ]
+            ];
+
+            let headThird = [
+                ['From╲To', 'C25']
+            ];
+
+            let matrixBodyThird = [
+                ['?',   'F216']
+            ];
+
+            let staticsTableDataThird = {
+                headline: 'Triglavian Space',
+                headGroup: headGroupThird,
+                head: headThird,
+                body: formatTableBodyData(headThird, matrixBodyThird)
+            };
+
+            let staticsTablesData = [staticsTableDataFirst, staticsTableDataSecond, staticsTableDataThird];
 
             let data = {
                 config: config,

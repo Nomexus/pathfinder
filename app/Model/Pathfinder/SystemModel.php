@@ -183,6 +183,7 @@ class SystemModel extends AbstractMapTrackingModel {
 
             $data->locked                   = $this->locked;
             $data->drifter                  = $this->isDrifter();
+            $data->pochven                  = $this->isPochven();
             $data->rallyUpdated             = strtotime($this->rallyUpdated);
             $data->rallyPoke                = $this->rallyPoke;
             $data->description              = $this->description ? : '';
@@ -718,6 +719,14 @@ class SystemModel extends AbstractMapTrackingModel {
      */
     public function isDrifter() : bool {
         return in_array($this->security, ['C14', 'C15', 'C16', 'C17', 'C18']);
+    }
+
+    /**
+     * check whether this system is in pochven-space
+     * @return bool
+     */
+    public function isPochven() : bool {
+        return in_array($this->constellationId, [20000788]);
     }
 
     /**

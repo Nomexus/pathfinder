@@ -551,6 +551,7 @@ define([
         system.data('planets', data.planets);
         system.data('shattered', data.shattered);
         system.data('drifter', data.drifter);
+        system.data('pochven', data.pochven);
         system.data('statics', data.statics);
         system.data('updated', parseInt(data.updated.updated));
         system.data('changed', false);
@@ -3110,6 +3111,7 @@ define([
                 planets: data.planets,
                 shattered: data.shattered ? 1 : 0,
                 drifter: data.drifter ? 1 : 0,
+                pochven: data.pochven ? 1 : 0,
                 statics: data.statics,
                 userCount: parseInt(data.userCount) || 0,
                 position: MapUtil.getSystemPosition(system)

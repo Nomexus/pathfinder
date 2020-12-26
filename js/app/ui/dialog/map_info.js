@@ -330,7 +330,11 @@ define([
                         data: 'planets',
                         render: {
                             _: (cellData, type, rowData, meta) => {
-                                return cellData.length;
+                                if(undefined !== cellData && cellData.length ) {
+                                    return cellData.length;
+                                } else {
+                                    return 0;
+                                }
                             }
                         }
                     },{
@@ -938,11 +942,13 @@ define([
                 let tableApi = Util.getDataTableInstance(config.tableId, mapData.config.id, '', 'systems');
                 let rowData = tableApi.row(cellElement.parents('tr')).data();
 
-                cellElement.addSystemPlanetsTooltip(rowData.planets, {
-                    trigger: 'manual',
-                    placement: 'left',
-                    show: true
-                });
+                if(undefined !== rowData.planets) {
+                    cellElement.addSystemPlanetsTooltip(rowData.planets, {
+                        trigger: 'manual',
+                        placement: 'left',
+                        show: true
+                    });
+                }
             },
             out: function(e){
                 $(this).destroyPopover();
